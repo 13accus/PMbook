@@ -1,0 +1,250 @@
+<!-- THIRD PAGE OF INTAKE FORM
+	
+	This is the third page of the intake/request form.
+
+-->
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html lang="eng">
+
+<head>
+	<title>Intake Form</title>
+
+<!-- Minified CSS from Bootstrap CDN
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+<link rel="stylesheet" type="text/css" href="{% static 'Models/css/bootstrap.css' %}" />
+
+
+<!-- Optional theme from Bootstrap CDN
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">  -->
+<link rel="stylesheet" type="text/css" href="{% static 'Models/css/bootstrap-theme.css' %}" />
+
+<!-- Custom css -->
+<link rel="stylesheet" type="text/css" href="{% static 'Models/css/style.css' %}" />
+
+<!-- fonts -->
+<link href="http://fonts.googleapis.com/css?family=Varela" rel="stylesheet" type="Models/text/css">
+</head> 
+
+
+<body class="intake">
+
+	<div class="container-fixed">
+	
+		<header class="row">
+			<nav>
+				<ul>
+					<li><h3><a href="{% url 'index' %}"> <span> PMbook </span></a></h3></li>
+				</ul>
+			</nav>
+		</header>
+
+		<form action="{% url 'intake' %}" method="post">
+		  {% csrf_token %}
+			<div class="row">
+				<div id="formcol" class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+					<h1>Project Intake Form</h1>
+					<hr>
+					<h3>III. Prioritization Factors</h3>
+					<br>
+					<br>
+
+					<h3>Need</h3>
+					<span class="help-block">Append with "YES:" or "NO:" with respect to answer. If unknown, provide any relevant information.</span>
+					
+				<div class="form-group">
+			 		<label class="control-label " for="needyn1">1. Will this satisfy and explicit regulatory or statutory requirement?</label>
+			 		<textarea class="input-sm textarea form-control" cols="40" id="needyn1" name="needyn1" placeholder="" rows="7" value="{{needyn1}}"></textarea>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label " for="needyn2">2. Will this improve or satisfy an explicit audit finding?</label>
+			 		<textarea class="input-sm textarea form-control" cols="40" id="needyn2" name="needyn2" placeholder="" rows="7" value="{{needyn2}}"></textarea>
+				</div>
+			
+				<div class="form-group">
+			 		<label class="control-label " for="yn3">3. Will this improve or satisfy a potential audit finding?</label>
+			 		<textarea class="input-sm textarea form-control" cols="40" id="yn3" name="needyn3" placeholder="" rows="7" value="{{needyn3}}"></textarea>
+				</div>
+			
+				<div class="form-group">
+			 		<label class="control-label " for="needyn4">4. Will this address a fundamental operational need of the Bureau?</label>
+			 		<textarea class="input-sm textarea form-control" cols="40" id="needyn4" name="needyn4" placeholder="" rows="7" value="{{needyn4}}"></textarea>
+				</div>
+			
+				<div class="form-group">
+			 		<label class="control-label " for="needyn5">5. Will this respond to imperative issued by the Director or an external authority?</label>
+	  				<textarea class="input-sm textarea form-control" cols="40" id="needyn5" name="needyn5" placeholder="" rows="7" value="{{needyn5}}"></textarea>
+				</div>
+			
+				<div class="form-group">
+			 		<label class="control-label " for="needyn6">6. Will this respond to imperative issued by the Director or an external authority?</label>
+			 		<textarea class="input-sm textarea form-control" cols="40" id="needyn6" name="needyn6" placeholder="" rows="7" value="{{needyn6}}"></textarea>
+			 		<span class="help-block" id="hint_needyn6">This question does not refer to a preferred date or timeline.</span>
+				</div>
+
+				
+
+			<h3>Value</h3>
+			<span class="help-block" id="hint_valueyn1">Append with "YES:" or "NO:" with respect to answer. If unknown, provide any relevant information.</span>
+			
+				<div class="form-group">
+			 		<label class="control-label " for="valueyn1">1. Will the outcome provide foundational capabilities that the Bureau (or Business Unit(s)) will build on during future efforts?</label>
+	 				<textarea class="input-sm textarea form-control" cols="40" id="valueyn1" name="valueyn1" placeholder="" rows="7" value="{{valueyn1}}"></textarea>
+				</div>
+			
+				<div class="form-group">
+			 		<label class="control-label " for="valueyn2">2. Will the outcome empower consumers to make better financial choices or change undesirable consumer or institutional behavior?</label>
+					<textarea class="input-sm textarea form-control" cols="40" id="valueyn2" name="valueyn2" placeholder="" rows="7" value="{{valueyn2}}"></textarea>
+				</div>
+				
+				<div class="form-group">
+			 		<label class="control-label " for="valueyn3">3. Will the outcome promote fair competition, transparent and efficient markets, and/or identify/reduce regulatory burden?</label>
+			 		<textarea class="input-sm textarea form-control" cols="40" id="valueyn3" name="valueyn3" placeholder="" rows="7" value="{{valueyn3}}"></textarea>
+				</div>
+			
+				<div class="form-group">
+			 		<label class="control-label " for="valueyn4">4. Will the outcome improve data-driven analysis to inform decision-making for internal or external functions?</label>
+			 		<textarea class="input-sm textarea form-control" cols="40" id="valueyn4" name="valueyn4" placeholder="" rows="7" value="{{valueyn4}}"></textarea>
+				</div>
+			
+				<div class="form-group">
+			 		<label class="control-label " for="valueyn5">5. Will the outcome improve Bureau performance in terms of efficiency and/or resource productivity?</label>
+					<textarea class="input-sm textarea form-control" cols="40" id="valueyn5" name="valueyn5" placeholder="" rows="7" value="{{valueyn5}}"></textarea>
+				</div>
+			
+				<div class="form-group">
+			 		<label class="control-label " for="valueyn6">6. Is this considered a top priority of one or more Business Units?</label>
+			 		<textarea class="input-sm textarea form-control" cols="40" id="valueyn6" name="valueyn6" placeholder="" rows="7" value="{{valueyn6}}"></textarea>
+				</div>
+
+
+
+			<h3>Technical Risk</h3> 
+			
+				<div class="form-group">
+					<label class="control-label " for="select">1. Cost</label>
+					<select class="input-sm select form-control" id="techrisk1" name="techrisk1" placeholder="" value="{{techrisk1}}">
+						<option value="Less than $400,000">Less than $400,000</option>				
+				 		<option value="$400,000 - $1M">$400,000 - $1M</option>
+					    <option value="More than $1M">More than $1M</option>
+					</select>
+			  
+					<span class="help-block" id="techrisk1">Hardware and software costs only.</span>
+				</div>
+			
+				<div class="form-group">
+			 		<label class="control-label " for="techrisk2">2. Level of Effort</label>
+			 		<select class="input-sm select form-control" id="techrisk2" name="techrisk2" placeholder="" value="{{techrisk2}}">
+			 			<option value="Fewer than 2 FTE">Fewer than 2 FTE</option>
+			 			<option value="2 - 5 FTE">2 - 5 FTE</option>
+			 			<option value="Greater than 5 FTE">Greater than 5 FTE</option>
+			 		</select>
+			 		
+			 		<span class="help-block" id="hint_techrisk2">Contractors and CFPB Employees</span>
+				</div>
+			
+				<div class="form-group">
+			 		<label class="control-label " for="techrisk3">3. Duration</label>
+			 		<select class="input-sm select form-control" id="techrisk3" name="techrisk3" placeholder="" value="{{techrisk3}}">
+			 			<option value="Less than 6 months">Less than 6 months</option>
+			 			<option value="6 - 9 months">6 - 9 months</option>
+			 			<option value="More than 9 months">More than 9 month</option>
+			 		</select>
+				</div>
+			
+				<div class="form-group">
+			 		<label class="control-label " for="techrisk4">4. Degree of Technical Change</label>
+			 		<select class="input-sm select form-control" id="techrisk4" name="techrisk4" placeholder="" value="{{techrisk4}}">
+			 			<option value="Update to existing functionality/tech.">Update to existing functionality/tech.</option>
+			 			<option value="New functionality/tech.">New functionality/tech.</option>
+			 			<option value="Greater than 5 FTE">Revolutionary new functionality/tech.</option>
+			 		</select>
+				</div>
+
+
+				<div class="form-group">
+			 		<label class="control-label " for="techrisk5">5. Dependencies</label>
+			 		<select class="input-sm select form-control" id="techrisk5" name="techrisk5" placeholder="" value="{{techrisk5}}">
+						<option value="No dependency">No dependency</option>
+			 			<option value="Soft dependency">Soft dependency</option>
+						<option value="Hard dependency">Hard dependency</option>
+			 		</select>
+				</div>		
+				
+				<div class="form-group">
+					<label class="control-label " for="techrisk6">6. Does this effort include developing a new system of capability that will require additional ongoing maintenance and support?</label>
+					 <input class="input-sm form-control" cols="40" id="techrisk6" name="techrisk6" placeholder=""/ value="{{techrisk6}}">
+					 <span class="help-block" id="hint_techrisk6">Append with "YES:" or "NO:" with respect to answer.</span>	
+				</div>
+	
+				<div class="form-group">
+		    		<label class="control-label " for="techrisk7">7. Integration</label>
+			 		<select class="input-sm select form-control" id="techrisk7" name="techrisk7" placeholder="" value="{{techrisk7}}">
+			 			<option value="Simple integration">Simple integration</option>
+			 			<option value="Complex integration">Complex integration</option>
+			 			<option value="Standalone ("stovepiped")">Standalone ("stovepiped")</option>
+					 </select>
+			 		<span class="help-block" id="hint_techrisk7">Technical and business process.</span>
+				</div>
+
+			 	
+
+			 	<div class="form-group">
+			  		<div>
+			            <input name="name" type="hidden" value={{name}}>
+                        <input name="email" type="hidden" value={{email}}>
+                        <input name="division" type="hidden" value={{division}}>
+                        <input name="office" type="hidden" value={{office}}>
+                        <input name="sponsor" type="hidden" value={{sponsor}}>
+                        <input name="poc" type="hidden" value={{poc}}>
+                        <input name="description" type="hidden" value={{description}}>
+                        <input name="method" type="hidden" value={{method}}>
+                        <input name="date" type="hidden" value={{date}}>
+                        <input name="launchdate" type="hidden" value={{launchdate}}>
+                        <input name="staff" type="hidden" value={{staff}}>
+			            <input name="value1" type="hidden" value={{value1}}>
+                        <input name="value2" type="hidden" value={{value2}}>
+                        <input name="value3" type="hidden" value={{value3}}>
+                        <input name="value4" type="hidden" value={{value4}}>
+                        <input name="value5" type="hidden" value={{value5}}>
+                        <input name="value6" type="hidden" value={{value6}}>
+                        <input name="comment" type="hidden" value={{comment}}>
+                        <input name="_honey" style="display:none" type="text"/>
+			   			<input class="btn btn-default" type="submit" name="back3" value="&#171; Back" role="button">
+			   			<input class="btn btn-primary btn-sm" type="submit" value="Submit" name="submit">
+			  		</div>
+			 	</div>
+			</form>
+
+		</div>
+
+	</div> <!--row-->
+
+		<footer class="row">
+
+
+		</footer>
+
+
+
+
+</div> <!--container-->
+
+<!-- jquery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- Custom script -->
+<script src="{% static 'Models/js/script.js' %}"></script>
+<!-- Bootstrap minified JavaScript from CDN
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>	-->
+<!-- Bootstrap minified javascript (local) -->
+<script src="{% static 'Models/js/bootstrap.min.js' %}"></script>
+		
+
+</body>
+
+
+
+
+</html>
