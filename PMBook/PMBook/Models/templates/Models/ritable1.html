@@ -1,0 +1,304 @@
+<!-- CURRENT NOT IN USE -->
+<!-- R&I TABLE
+  
+  This is a table of all the risk and issues of one projects.
+  This page works. However, it would be best to have a click to edit feature.
+
+-->
+{% load staticfiles %}
+
+<html lang="eng">
+
+<head>
+        <title>{{p.name}} - Risk and Issues</title>
+
+<!-- Minified CSS from Bootstrap CDN                                                                                                                                                      
+                                                                                                                                                                                                                                            
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+<link rel="stylesheet" type="text/css" href="{% static 'Models/css/bootstrap.css' %}" />
+
+
+<!-- Optional theme from Bootstrap CDN                                                                                                                                               
+                                                                                                                                                                                                                                            
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">  -->
+<link rel="stylesheet" type="text/css" href="{% static 'Models/css/bootstrap-theme.css' %}" />
+
+<!-- Custom css -->
+<link rel="stylesheet" type="text/css" href="{% static 'Models/css/style.css' %}" />
+
+<!-- fonts -->
+<link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+</head>
+
+
+<body id="projtable">
+        <div class="container-fluid">
+  
+
+  <!-- This may be useless -->
+  <script>
+    $("input").keypress(function(event) {
+    if (event.which == 13) {
+        event.preventDefault();
+        $("form").submit();
+    }
+    });
+  </script>
+  <header class="row">
+    <nav>
+      <ul>
+        <li><h3><a href="{% url 'index' %}"> <span> PMbook </span></a></h3></li>
+    
+        <li>
+          <h3><label for="id-of-input" class="sr-only">Search</label></h3>
+          <form action="project/search/" method="post">
+            {% csrf_token %}
+            <input type="text" name="project_id" placeholder="SEARCH" id="search">
+          </form>
+        </li>
+    
+        <li role="presentation" class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            <h3>View Project Details</h3> 
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/project/{{p.project_id}}/ri">Risks and Issues </a></li>
+            <li><a href="/project/{{p.project_id}}/milestone">Milestones </a></li>
+            <li><a href="/project/{{p.project_id}}/note">Notes</a></li>
+            <li><a href="/project/{{p.project_id}}/gatedoc">Gate Document</a></li>
+            <li><a href="/project/{{p.project_id}}">Back to Profile </a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+	<div class="row">
+		<h1>Risks and Issues </h1>
+    <div class="editmenu">
+			<a class="btn btn-default" type="button" href="#">New</a>
+      <a class="btn btn-default" type="button" href="#">Edit</a>
+		</div>
+	</div>
+
+
+	<div class="row">
+	   <table id="ritable" class="table table-hover">
+      <thead>
+				<tr>
+				<th>No
+				<th>Type
+				<th>Title
+				<th>Category
+				<th>Severity
+				<th>Probability <!--Risk only -->
+				<th>Open Date
+				<th>Target Close Date
+				<th>Description
+				<th>Assigned To
+				<th>Next Steps
+				<th>External Dependencies
+				<th>Last updated
+				<tbody>
+					{% for risk in risk %}
+					<form action="/project/{{p.project_id}}/ri/" method="post">
+          {% csrf_token %}
+          <tr>
+					 	<td>{{ risk.id }}
+					 	<td><select name="risk_or_issue">       
+						      <option value='risk'>Risk</option>
+                  <option value='issue'>Issue</option>
+                </select>
+					  <td> <input class="form-control" type="text" name="title" value="{{ risk.title }}"/>
+					 	<td> <select name="category">                                           
+							      <option value='{{risk.category}}'> {{ risk.category }} </option>
+                    <option value='Strategic'>Strategic</option>                                                                 
+                    <option value='Organizational'>Organizational</option>                                                            
+                    <option value='Compliance'>Compliance</option>                                                          
+                    <option value='Privacy'>Privacy</option>                                                                  
+                    <option value='Security'>Security</option>                                                                   
+                    <option value='Info Assurance'>Info Assurance</option>
+                    <option value='Process'>Process</option>                                                 
+                    <option value='Technical'>Technical</option>                                                   
+							      <option value='Dependency'>Dependency</option>
+							      <option value='Resources'>Resources</option>
+							      <option value='Scope'>Scope</option>
+							      <option value='Cost'>Cost</option>
+							      <option value='Schedule'>Schedule</option>
+                  </select>
+          
+            <td> <select name="severity">                                           
+                  <option value='{{risk.severity}}'> {{ risk.severity }} </option>
+                  <option value='NONE'>NONE</option>                                                      
+                  <option value='COMPLETE'>COMPLETE</option>                                            
+                  <option value='GREEN'>GREEN</option>                                                    
+                  <option value='YELLOW'>YELLOW</option>                                                          
+                  <option value='RED'>RED</option>                                                        
+                </select>
+
+            <td> <select name="probability">                                           
+                  <option value='{{risk.probability}}'> {{ risk.probability }} </option>
+                  <option value='High'>High</option>                                                      
+                  <option value='Medium'>Medium</option>                                            
+                  <option value='Low'>Low</option>                                                   
+                </select>
+					   
+            <td> <input class="form-control" type="date" name="open_date" value="{{ risk.open_date|date:'Y-m-d' }}">
+            <td> <input class="form-control" type="date" name="close_date" value="{{ risk.close_date|date:'Y-m-d' }}">
+					 	<td> <input class="form-control" type="text" name="comment" value="{{ risk.comment }}">
+					 	<td> <input class="form-control" type="text" name="assigned_to" value="{{ risk.assigned_to }}">
+					 	<td> <input class="form-control" type="text" name="next_step" value="{{ risk.next_step }}">
+					 	<td> <input class="form-control" type="text" name="external_dependencies" value="{{ risk.external_dependencies }}">
+					 	<td>{{ risk.timestamp }}
+							
+              <input type="hidden" name="project_id" value="{{p.project_id}}"/>
+              <input type="hidden" name="id" value="{{risk_id}}"/>
+            <td> <input class="btn btn-default" type="submit"/>
+					</form>
+				{% endfor %}
+					
+				{% for issue in issue %}
+
+					<form action="/project/{{p.project_id}}/ri/" method="post">
+            {% csrf_token %}
+					  <tr>
+						<td>{{ issue.id }}
+            <td><select name="risk_or_issue">
+                  <option value='issue'>Issue</option>
+                  <option value='risk'>Risk</option>
+                </select>
+            
+            <td> <input class="form-control" type="text" name="title" value="{{ issue.title }}"/>
+            <td> <select name="category">                                           
+                    <option value='{{issue.category}}'> {{ issue.category }} </option>
+                    <option value='Strategic'>Strategic</option>                                                                 
+                    <option value='Organizational'>Organizational</option>                                                                   
+                    <option value='Compliance'>Compliance</option>                                                                 
+                    <option value='Privacy'>Privacy</option>                                                                   
+                    <option value='Security'>Security</option>                                                                                       
+                    <option value='Info Assurance'>Info Assurance</option>
+                    <option value='Process'>Process</option>                                                 
+                    <option value='Technical'>Technical</option>                                                   
+                    <option value='Dependency'>Dependency</option>
+                    <option value='Resources'>Resources</option>
+                    <option value='Scope'>Scope</option>
+                    <option value='Cost'>Cost</option>
+                    <option value='Schedule'>Schedule</option>
+                </select>
+						
+            <td> <select name="severity">                                           
+                  <option value='{{ issue.severity }}'> {{ issue.severity }} </option>
+                  <option value='NONE'>NONE</option>                                                      
+                  <option value='COMPLETE'>COMPLETE</option>                                            
+                  <option value='GREEN'>GREEN</option>                                                    
+                  <option value='YELLOW'>YELLOW</option>                                                          
+                  <option value='RED'>RED</option>                                                        
+                </select>
+
+            <td> <select name="probability">                                           
+                                                          
+
+                </select>
+            
+            <td> <input class="form-control" type="date" name="open_date" value="{{ issue.open_date|date:'Y-m-d' }}">
+            <td> <input class="form-control" type="date" name="close_date" value="{{ issue.close_date|date:'Y-m-d' }}">
+            <td> <input class="form-control" type="text" name="comment" value="{{ issue.comment }}">
+            <td> <input class="form-control" type="text" name="assigned_to" value="{{ issue.assigned_to }}">
+            <td> <input class="form-control" type="text" name="next_step" value="{{ issue.next_step }}">
+            <td> <input class="form-control" type="text" name="external_dependencies" value="{{ issue.external_dependencies }}">
+            <td>{{ issue.timestamp }}
+						
+            <input type="hidden" name="project_id" value="{{p.project_id}}"/>
+            <input type="hidden" name="id" value="{{issue.issue_id}}"/>
+            <td> <input class="btn btn-default" type="submit"/>
+          </form>
+          
+          {% endfor %}
+					    
+          <form action="/project/{{p.project_id}}/ri/" method="post">
+            {% csrf_token %}
+            <tr>
+            <td>
+            <td><select name="risk_or_issue">                                           
+                  <option value='issue'>Issue</option>                                                               
+                  <option value='risk'>Risk</option> 
+							  </select>
+            <td> <input class="form-control" type="text" name="title" />
+            <td> <select name="category">                                           
+                  <option value='Strategic'>Strategic</option> 
+                  <option value='Organizational'>Organizational</option>
+                  <option value='Compliance'>Compliance</option>                                                             
+                  <option value='Privacy'>Privacy</option>                                                                   
+                  <option value='Security'>Security</option>                                                                 
+                  <option value='Info Assurance'>Info Assurance</option>
+                  <option value='Process'>Process</option>                                                 
+                  <option value='Technical'>Technical</option>                                                   
+                  <option value='Dependency'>Dependency</option>
+                  <option value='Resources'>Resources</option>
+                  <option value='Scope'>Scope</option>
+                  <option value='Cost'>Cost</option>
+                  <option value='Schedule'>Schedule</option>
+                </select>
+
+            <td> <select name="severity">                                           
+                  <option value='NONE'>NONE</option>                                                      
+                  <option value='COMPLETE'>COMPLETE</option>
+							    <option value='GREEN'>GREEN</option>                 
+                  <option value='YELLOW'>YELLOW</option> 
+                  <option value='RED'>RED</option>
+                </select>
+
+
+            <td> <select name="probability">
+                  <option value='High'>High</option>
+                  <option value='Medium'>Medium</option>
+                  <option value='Low'>Low</option>
+                </select>
+            
+            <td> <input class="form-control" type="date" name="open_date" placeholder="YYYY-MM-DD">
+            <td> <input class="form-control" type="date" name="close_date" placeholder="YYYY-MM-DD">
+            <td> <input class="form-control" type="text" name="comment">
+            <td> <input class="form-control" type="text" name="assigned_to">
+            <td> <input class="form-control" type="text" name="next_step">
+            <td> <input class="form-control" type="text" name="external_dependencies">
+            <td>
+                <input type="hidden" name="project_id" value="{{p.project_id}}"/>
+                <input type="hidden" name="id" value="{{num}}"/>
+            <td> <input class="btn btn-default" type="submit"/>
+          </form>
+			 </table>
+
+		  </div> <!--/row-->	
+
+
+		<footer class="row">
+				
+
+		</footer>	
+	
+
+</div>
+
+<!-- jquery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- Custom script -->
+<script src="{% static 'Models/js/script.js' %}"></script>
+<!-- Bootstrap minified JavaScript from CDN                                                                                                                                                                                                
+                                                                                                                                                                                                                                            
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>                                                                                                                                                
+                                                                                                                                                                                                                                            
+-->
+<!-- Bootstrap minified javascript (local) -->
+<script src="{% static 'Models/js/bootstrap.min.js' %}"></script>
+
+</body>
+
+
+
+</html>
+
+
+
+

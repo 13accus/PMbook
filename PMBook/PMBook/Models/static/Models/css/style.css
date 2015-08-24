@@ -1,0 +1,594 @@
+/*************** Project Profile page ****************
+=====================================================*/
+
+/****** Global ******
+=====================*/
+
+/* Color Glossary
+
+	+pale gray (bg): #d7d7d7;
+	+palest gray (header text): #ebebeb;
+	+dark gray (left and header bg): #363635;
+	+darkest gray (text): #4a4a49;
+	+medium gray (well image border): #808080;
+	+gray (visited link in dropdown nav): #969696;
+	+dark blue (most links): #23527c;
+	+pale green (pmbook link): #c2f6c4;
+	+off white (jumbotron text): #EBEDE6;
+	+off white 2 (form column bg): #fbfbfb;
+    ----------------------
+	Status colors:
+	.stat-green: #63994C;
+	.stat-yellow: #F4DB5D;
+	.stat-red: #CC3B3D;
+	.stat-blue: #4E84B3;
+=======================
+*/
+
+body {
+	background:#d7d7d7;
+	text-align:left;
+	margin:0px;
+	padding:0;
+	color: #4a4a49;
+	overflow: scroll;
+
+	}
+@font-face{
+	font-family: 'Glyphicons Halflings';
+	src: url('../bootstrap/fonts/glyphicons-halflings-regular.ttf');
+}
+
+
+input {
+	max-width: 200px;
+}
+
+a, a:visited {
+	color: #4a4a49;
+	text-decoration:none;
+	}
+
+a:hover {
+	color: #23527c;
+	text-decoration: none;
+	}
+
+
+header {
+	background:#363635;
+	padding:10px;
+	margin:0;
+	text-align:center;
+	color: #ebebeb;
+	}
+header a{
+	color:#d7d7d7;
+}
+header a:hover {
+	color:#C2F6C4 !important;
+	text-decoration: none;
+	}
+
+header a:visited{
+	
+	color: #d7d7d7;
+
+}
+
+header h3{
+	
+	text-transform: uppercase;
+	color: #d7d7d7;
+
+}
+
+header h3 span {
+
+	text-transform: none;
+}
+
+header.row{
+
+	padding: 0px;
+}
+
+nav{
+	float:left;
+	margin-left: -60px;
+	
+}
+
+
+nav li{
+
+	display:inline-block;
+	min-width: 200px;
+	
+
+}
+
+
+li.dropdown{
+	text-align: center;
+	top:30px;
+}
+
+nav ul.dropdown-menu{
+	width:202px !important;
+}
+
+nav ul.dropdown-menu li a:hover{
+	color: #23527c !important;
+}
+
+nav ul.dropdown-menu li a:visited{
+	color: #969696;
+}
+
+span.caret{
+	display:inline;
+}
+
+#search {
+
+	width: 150px;
+	color: #d7d7d7;
+	max-width: 180px;
+	height: 45px;
+	padding: 2px;
+	margin-right: 40px;
+	color: #ffffff;
+	font-size: 24px;
+	text-align:center;
+	background-color: transparent;
+	border-width: medium medium 2px;
+	border-style: none none solid;
+}
+
+
+h3 {
+	font-family: 'Varela', sans-serif;
+	text-transform: uppercase;
+
+
+}
+
+
+h4 {
+
+	text-transform: uppercase;
+}
+
+h5{
+	text-transform: uppercase;
+}
+
+footer{
+	font-size: 10px;
+
+	margin-top: 80px !important;
+}
+
+/****** Left Column ******
+=========================*/
+
+#left{
+	background-color: #363635;
+	color: #d7d7d7 !important;
+	overflow: auto;
+	/*min-width: 350px;*/
+	font-size: 17px;
+	letter-spacing: .75px;
+	height: 100%;
+	border-top: solid 1px #d7d7d7;
+
+}
+
+h3 span{
+	display: block;
+	text-transform: none;
+}
+
+#toggle{
+	font-size: 28px;
+	display: inline;
+}
+
+
+
+#toggle a,
+#toggle a:hover
+#toggle a:visited{
+	color: #d7d7d7 !important;
+}
+
+/****** Center Column ******
+===========================*/
+
+#center{
+	overflow: hidden;
+	border-right: solid 1px #afafaf;
+
+}
+
+#statusbar{
+	white-space: nowrap;
+	letter-spacing: 1px;
+}
+
+#statusbar a{
+	letter-spacing: normal;
+}
+
+#statusbar li{
+	display: inline-block;
+	padding: 10px;
+	padding-right: 25px;
+}
+
+
+img{
+	height: 80px;
+	border: 3px solid #808080;
+    border-radius: 50%;
+
+
+}
+
+
+#statusbar img {
+	border: 3px solid #ffffff;
+    border-radius: 50%;
+    background-color: #ebebeb;
+   
+}
+
+figcaption{
+	text-align: center;
+}
+
+/***** Modals *****
+==================*/
+.modal{
+	overflow: hidden;
+}
+
+.modal h5{
+	display: inline-block;
+}
+.modal-header input{
+	color: #4a4a49;
+	font-size: 24px;
+	
+}
+
+.modal-body input{
+	color: #4a4a49;
+}
+
+
+.modaldrop{
+	width: 100px;
+}
+
+.modaldrop label{
+	font-weight: normal;
+}
+
+
+
+#center.well{
+	max-width: 500px;
+
+}
+
+/* status update wells */
+.issue, .risk, .mile, .note, #recent{
+  	background-image: linear-gradient(to bottom, #ebebeb 0%, #fdfdfd 100%);
+	background-repeat: repeat-x;
+ 	border-color: #afafaf;
+	box-shadow: inset 0 1px 5px rgba(0, 0, 0, .05), 0 1px 0 rgba(255, 255, 255, .1);
+	border-radius: 5px;
+}
+
+
+
+.timestamp{
+	position: absolute;
+	float: right;
+	text-align: right;
+	bottom: 10px;
+
+}
+
+
+#toggle{
+	font-size: 14px;
+}
+
+/****** Right Column ******
+==========================*/
+
+#right{
+	float: left;
+	overflow: hidden;
+
+}
+.stat-green{
+	background-color: #63994C;
+}
+
+.stat-yellow{
+	background-color: #F4DB5D;
+}
+
+.stat-red{
+	background-color: #CC3B3D;
+}
+
+.stat-blue{
+	background-color:#4E84B3;
+}
+
+#statnumber{
+	top:-20px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+	border-radius: 4px;
+}
+
+#statnumber h1.text-warning{
+	color: #cfa600;
+}
+
+#statnumber h1{
+	font-size: 90px;
+	display: inline-block;
+	font-family: 'Arvo', serif;
+}
+#statnumber h2{
+	font-size: 75px;
+	display: inline-block;
+}
+
+#statnumber h5{
+	font-size: 16px;
+}
+
+#statdrop{
+	color: #4a4a49;
+	height: 30px;
+	font-size: 20px;
+	text-align:left;
+	background-color: #ebebeb;
+	border-radius: 4px;
+	border-style: none;
+}
+
+
+
+#recent li{
+	white-space: nowrap;
+	list-style: none;
+	overflow: hidden;
+}
+
+
+
+#recent figcaption{
+	display: inline-block;
+	text-align: left;
+	line-height: 36px;
+
+
+}
+#recent span{
+	font-size: 24px;
+}
+
+#recent figcaption .timestamp{
+	margin-top: 10px;
+}
+
+#recent img {
+	height: 80px;
+}
+
+.statusfigure{
+	position: relative;
+	float:right;
+	top: 10px;
+
+}
+
+#overview{
+	text-align: left;
+}
+
+
+
+footer {
+	position:relative;
+	height:50px;
+	width:100%;
+	clear:both;
+	margin:0;
+	padding:1% 0;
+	text-align:center;
+	bottom: 0px;
+	}
+/**************** MPL & Tables ****************
+==============================================*/
+html.projtable{
+	overflow-y: hidden;
+}
+
+.projtable table{
+	background-color: #ffffff; 
+	overflow: auto;
+	padding: 0;
+	margin: 0;
+}
+
+.projtable table tr td a {
+    display:block;
+    height:100%;
+    width:100%;
+}
+
+.projtable table{
+
+}
+
+
+.tablewrap{
+	overflow: scroll;
+	height: 75%;
+}
+
+.projtable h1 {
+	text-transform: uppercase;
+}
+
+.editmenu {
+	float:right;
+	display: inline-block;
+	position:relative;
+	margin-bottom: 5px;
+}
+
+.editmenu a{
+	color: #4a4a49;
+}
+
+
+@-moz-document url-prefix() {
+  fieldset { display: table-cell; 
+  }
+}
+
+
+
+/************ Reports ******************
+=======================================*/
+.report{
+	overflow: auto;
+
+}
+.report h1{
+	text-transform: uppercase;
+}
+
+
+
+/************ PMbook page *******************
+============================================*/
+
+
+html.message-page{
+  	background: radial-gradient(farthest-corner at 100% 90%,#D9F0Af,#7BD890,#0D3616) fixed;
+ 	 overflow: scroll;
+ 	 height: 100%;
+ 	 width: 100%;
+}
+
+html.message-page.container-fluid{
+	overflow: hidden;
+	background:transparent;
+}
+
+.message-page body{
+	background:transparent;
+	overflow: hidden;
+	margin-bottom: 20px;
+	
+}
+
+.message-page a{
+	color: #4a4a49;
+}
+
+.jumbotron{
+	text-align: center;
+	height: 500px;
+	background-color: transparent;
+	margin-bottom: -50px;
+	margin-top:-25px;
+	overflow: hidden;
+	overflow: visible;
+	white-space: nowrap;
+}
+
+.jumbotron h1{
+	margin-top: 100px;
+	font-family: 'Varela', sans-serif; 
+	font-size: 200px;
+	color: #EBEDE6;
+
+}
+
+.input-group{
+	display: inline;
+}
+
+#gotoproj{
+	width: 120px !important;
+	height: 30px;
+	padding: 2px;
+	color: #4a4a49;
+	text-align:left;
+	float: left;
+
+}
+
+/************ Confirmation page *******************
+==================================================*/
+#confirmtext{
+	margin-right:50px;
+	text-align: center;
+	color: #fff;
+	font-size: 30px;
+
+
+}
+
+#confirmtext h2{
+	font-weight: 400;
+
+}
+
+#confirmtext a, 
+#confirmtext a:visited{
+	color: #6e6e6d;
+	font-size: 24px;
+
+}
+
+#confirmtext a:hover{
+	color: #23527c;
+}
+
+/************ Intake form pages ******************
+==================================================*/
+.intake {
+	
+}
+
+#formcol{
+	background-color: #fbfbfb !important;
+}
+
+
+
+input.form-control{
+	width: 200px !important;
+}
+textarea.form-control{
+	width:100%;
+}
+
+#in1{
+	border: solid 1px #000;
+}
+
+

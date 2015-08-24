@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+
+<html lang="eng">
+
+<head>
+	<title>Project Profile</title>
+
+<!-- Minified CSS from Bootstrap CDN
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+
+<!-- Optional theme from Bootstrap CDN
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">  -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css" />
+
+<!-- Custom css -->
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<!-- fonts -->
+<link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+</head> 
+
+<body>
+	<div class="container-fluid">
+	
+		<header class="row navbar-fixed-top">
+			<nav>
+				<ul>
+					<li><h3><a href="index.html"> <span> PMbook </span></a></h3></li>
+					<li>
+						<h3><label for="id-of-input" class="sr-only">Search</label></h3>
+							<input type="text" name="search" placeholder="SEARCH" id="search">
+					</li>
+					<li role="presentation" class="dropdown">
+				    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+				      <h3>View Project Details</h3> <span class="caret"></span>
+				    </a>
+				    	<ul class="dropdown-menu">
+				    		<li><a href="ritable.html">Risks and Issues </a></li> 
+							<li><a href="miletable.html">Milestones </a></li> 
+							<li><a href="notetable.html">Notes</a></li> 
+							<!-- <li><a href="gatedoc">Gate Document</a></li> -->
+
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+
+		<div class="row" style="margin-top: 99px;">
+
+			<!-- Left Column -->
+			<div id="left" class="col-lg-3 col-md-5 col-sm-5">
+				<div id="overview" class="col-xs-12"> 
+				
+					<h1>Project Hydra</h1>
+					<p> 
+					Developing a project management tool that allows PMs to communicate needs to PMO. This tool also creates sample text that gives one a general idea of the page layout.
+					</p>
+
+					<br>
+					<h3>Team 
+						<!-- Accordion toggle button -->
+						<span>
+							<a href="#" id="toggle" data-toggle="collapse" data-target="#team" data-parent="#pm" value="Toggle Button">Expand</a>
+						</span>
+					</h3>
+	
+	
+					<!-- Team accordion -->
+					<p id="pm"> Project Manager: Joanna Phillip</p>
+
+					<div id="team" class="panel-collapse collapse">
+						<p > Supervisor: Chaeny Emanavin</p>
+					</div>
+
+
+					<!-- Dropdown here 
+					<h4>Status </h4> Active
+					-->
+					<br>
+					<h4>Schedule</h4>
+						Gate 0 Review: 07/30/15<br>
+						Gate 1 Review: 08/02/15
+
+					<br>
+					<br>
+
+
+			</div>
+
+		</div>
+
+
+			<!-- Center Column -->
+			<div id="center" class="col-lg-6 col-md-7 col-sm-7 col-xs-12">
+					<h3> Add an item </h3>
+						</br>
+					<!-- "Add an item" bar -->	
+					<div id="statusbar">
+						<ul>
+							<li>
+								<figure>
+									<a data-toggle="modal" href="#issuemodal">
+										<img src="img/issue.png">
+									</a>
+										<figcaption> Issues
+											</br>
+											</br>
+											<a href="ritable.html"> View All</a>
+										</figcaption>
+								</figure></li>
+							<li>
+								<figure>
+									<a data-toggle="modal" href="#riskmodal">
+										<img src="img/risk.png">
+									</a>
+										<figcaption> Risks
+											</br>
+											</br>
+											<a href="ritable.html"> View All</a>
+										</figcaption>
+								</figure></li>
+
+							<li><figure>
+									<a data-toggle="modal" href="#milemodal">
+										<img src="img/milestone.png">
+									</a>
+										<figcaption> Milestones
+											</br>
+											</br>
+											<a href="miletable.html"> View All</a>
+										</figcaption>
+
+								</figure></li>
+							<li><figure>
+									<a data-toggle="modal" href="#notemodal">
+										<img src="img/note.png">
+									</a>
+										<figcaption> Notes
+											</br>	
+											</br>
+											<a href="notetable.html"> View All</a>
+										</figcaption>
+								</figure>
+							</li>
+						</ul>
+
+					</div>
+				<!-- end "Add an item" bar -->
+
+				<!-- Status Update Modals -->
+
+				<!-- Issue Modal -->
+				<div id="issuemodal" class="modal fade">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+				        <input type="text" class="modal-title" name="title" placeholder="(Issue Title)">
+				      </div>
+
+				      <div class="modal-body">
+				       <h5> OPEN DATE: </h5>
+					       <input type="date" name="opendate" placeholder="__ /__ /__">
+					        <div class="modaldrop" class="form-group"> 
+					        	<label>Severity: </label>
+					      		  <select class="form-control" name="severity">
+					        		<option>Low</option>
+					        		<option>Medium</option>
+					        		<option>High</option>
+					      		  </select>
+					   		 </div>
+
+					        <div class="modaldrop" class="form-group"> 
+					        	<label>Category: </label>
+					      		  <select class="form-control" name="category">
+					        		<option>Schedule</option>
+					        		<option>Costs</option>
+					        		<option>Scope</option>
+					        		<option>Resources</option>
+					        		<option>Dependency</option>
+					        		<option>Technical</option>
+					        		<option>Process</option>
+					        		<option>Info Assurance</option>
+					        		<option>Security</option>
+					        		<option>Privacy</option>
+					        		<option>Compliance</option>
+					        		<option>Organizational</option>
+					        		<option>Strategic</option>
+					      		  </select>
+					   		 </div>		 
+
+				       <br> Assigned to:
+				       <br><input type="text" name="assignedto">
+				       <br>
+				       <br>
+				       <textarea class="form-control" name="description" placeholder="(Description)" rows="3"></textarea>
+				       
+				       <hr>
+				       Mitigation plan:
+				       <textarea class="form-control" name="mitplan" rows="3"></textarea>
+				       <br>
+
+				       External Dependencies: 
+				       <textarea class="form-control" name="externdepend" rows="3"></textarea>
+				      </div>
+
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				        <button type="button" class="btn btn-primary">Save changes</button>
+				      </div>
+				    </div><!-- /.modal-content -->
+				  </div><!-- /.modal-dialog -->
+				</div><!-- /.modal -->
+
+
+				<!-- Risk Modal -->
+				<div id="riskmodal" class="modal fade">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+				        <input type="text" class="modal-title" name="title" placeholder="(Risk Title)">
+				      </div>
+
+				      <div class="modal-body">
+				       <h5> OPEN DATE: </h5>
+					       <input type="date" name="opendate" placeholder="__ /__ /__">
+					        <div class="modaldrop" class="form-group"> 
+					        	<label>Severity: </label>
+					      		  <select class="form-control" name="severity">
+					        		<option>Low</option>
+					        		<option>Medium</option>
+					        		<option>High</option>
+					      		  </select>
+					   		 </div>
+					   		      
+					   		 <div class="modaldrop" class="form-group"> 
+					        	<label>Probability: </label>
+							      <select class="form-control" name="probability">
+					   		      	<option>Low</option>
+					   		      	<option>Medium</option>
+					   		      	<option>High</option>
+					   		      </select>
+					   		  </div>
+
+					   		<div class="modaldrop" class="form-group"> 
+					   		    <label>Category: </label>
+					   		       <select class="form-control" name="category">
+					   		       	    <option>Schedule</option>
+					   		       	    <option>Costs</option>
+					   		       		<option>Scope</option>
+					   		       		<option>Resources</option>
+					   		       		<option>Dependency</option>
+					   		       		<option>Technical</option>
+					   		       		<option>Process</option>
+					   		       		<option>Info Assurance</option>
+					   		       		<option>Security</option>
+					   		       		<option>Privacy</option>
+					   		       		<option>Compliance</option>
+					   		       		<option>Organizational</option>
+					   		       		<option>Strategic</option>
+					   		     	</select>
+					   		</div>						   		  
+
+
+				       <br> Assigned to:
+				       <br><input type="text" name="assignedto">
+				       <br>
+				       <br>
+				       <textarea class="form-control" name="description" placeholder="(Description)" rows="3"></textarea>
+				       
+				       <hr>
+				       Mitigation plan:
+				       <textarea class="form-control" name="mitplan" rows="3"></textarea>
+				       <br>
+				       
+				       External Dependencies: 
+				       <textarea class="form-control" name="externdepend" rows="3"></textarea>
+				      </div>
+
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				        <button type="button" class="btn btn-primary">Save changes</button>
+				      </div>
+				    </div><!-- /.modal-content -->
+				  </div><!-- /.modal-dialog -->
+				</div><!-- /.modal -->
+
+
+				<!-- Milestone Modal -->
+				<div id="milemodal" class="modal fade">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+				        <input type="text" class="modal-title" name="title" placeholder="(Milestone)">
+				      </div>
+
+				      <div class="modal-body">
+
+				       <div class="modaldrop" class="form-group"> 
+				           <label>Milestone type: </label>
+				         		<select class="form-control" name="miletype">
+				         			<option>Other</option>
+				           			<option>Gate 0 Review</option>
+				           			<option>Gate 1 Review</option>
+				           			<option>Gate 2 Review</option>
+				         		</select>
+				      	</div>
+
+
+				       <h5> BASELINE DATE: </h5>
+					       <input type="date" name="basedate" placeholder="__ /__ /__">
+					       <br>
+					   <h5> TARGET DATE: </h5>
+						   <input type="date" name="targetdate" placeholder="__ /__ /__">   
+					    <div class="modaldrop" class="form-group"> 
+					        <label>Status: </label>
+					      		<select class="form-control" name="severity">
+					        		<option>On-time</option>
+					        		<option>Completed</option>
+					        		<option>Delayed</option>
+					      		</select>
+					   	</div>
+					   	<br>
+				       <textarea class="form-control" name="description" placeholder="(Description)" rows="3"></textarea>
+				      </div>
+
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				        <button type="button" class="btn btn-primary">Save changes</button>
+				      </div>
+				    </div><!-- /.modal-content -->
+				  </div><!-- /.modal-dialog -->
+				</div><!-- /.modal -->
+
+				<!-- Note Modal -->
+				<div id="notemodal" class="modal fade">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+				        <input type="text" class="modal-title" name="title" placeholder="(Note Title)">
+				      </div>
+
+				      <div class="modal-body">
+				       <h5>DATE: </h5>
+					       <input type="date" name="date" placeholder="__ /__ /__">
+					       <br>
+					   
+
+				       <textarea class="form-control" name="text" placeholder="(Text)" rows="3"></textarea>
+				      </div>
+
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				        <button type="button" class="btn btn-primary">Save changes</button>
+				      </div>
+				    </div><!-- /.modal-content -->
+				  </div><!-- /.modal-dialog -->
+				</div><!-- /.modal -->
+							
+
+
+				<!---Update Feed-->
+
+					<section>
+
+				<h3> Issues </h3>
+					<div id="is1" class="well well-sm issue">
+						<figure class="statusfigure">
+									<img src="img/resources.png">
+										<figcaption>
+											</br>
+											Resources
+										</figcaption>
+								</figure>
+
+						<h2> Need Software </h2>
+						<h5> OPEN DATE: 07/01/2015</h5>
+							 Severity: Medium
+						<br> Assigned to: Joanna Phillips
+						<p> Production is halted until appropriate software can be acquired.
+						</p>
+						<hr>
+						<p>Mitigation Plan: Fill out a bunch of forms and wait forever
+						<br>
+						External Dependencies: Form approving people
+						</p>
+						<p id="timestamp"> Last updated: 07/01/2015
+						</p>
+					</div>
+
+
+					<section>
+
+				<h3> Risks </h3>
+
+				<div id="rs1" class="well well-sm risk">
+						<figure class="statusfigure">
+									<img src="img/resources.png">
+										<figcaption>
+											</br>
+											Resources
+										</figcaption>
+								</figure>
+
+						<h2> Need Software </h2>
+						<h5> OPEN DATE: 07/01/2015</h5>
+							 Severity: Medium
+						<br> Probability: High
+						<br> Assigned to: Joanna Phillips
+						<p> Production is halted until appropriate software can be acquired.
+						</p>
+						<hr>
+						<p>Mitigation Plan: Fill out a bunch of forms and wait forever
+						<br>
+						External Dependencies: Form approving people
+						</p>
+						<p id="timestamp"> Last updated: 07/01/2015
+						</p>
+					</div>
+
+					<section>
+
+				<h3> Milestones</h3>
+					<div id="mi1" class="well well-sm mile">
+						<figure class="statusfigure">
+							<img src="img/milestone.png">
+								<figcaption>
+									</br>
+									Milestone
+								</figcaption>
+						</figure>
+
+						<h2> Prototype </h2>
+						<h5> BASELINE DATE: 06/10/2015</h5>
+						<h5> TARGET DATE: 07/15/2015</h5>
+						<br>
+						<p> Prototype mock-up screens with PMO personnel and friends.
+						</p>
+						<p id="timestamp"> Last updated: 07/01/2015
+						</p>
+					</div>
+
+					<section>
+
+				<h3> Notes </h3>
+					<div id="nt1" class="well well-sm note">
+						<figure class="statusfigure">
+							<img src="img/note.png">
+								<figcaption>
+									</br>
+									Note
+								</figcaption>
+						</figure>
+						<h2> A Side Note </h2>
+						<h5>DATE: 07/16/15</h5>
+						<p> The date should probably be filled out automatically. That would make way more sense. Not sure why anyone would use this but I guess it's good to cover all bases? 
+						<p id="timestamp"> Last updated: 07/16/2015
+						</p>
+					</div>
+
+			</div>
+
+
+
+
+
+			<!-- Right Column -->
+			<div id="right" class="col-lg-3 hidden-xs">
+				<div class="row">
+					<div id="statnumber" class="col-xs-12 stat-green">
+						<h2>No. </h2><h1> 001</h1>
+						<h5>Status:
+							<select id="statdrop">
+								<option>Green</option> <!--class="stat-green" -->
+								<option>Yellow</option> <!--class="stat-yellow" -->
+								<option>Red</option> <!--class="stat-red" -->
+								<option>Complete</option> <!--class="stat-blue" -->
+								<option>Other</option>
+							</select>
+						</h5>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div id="recentwrap" class="col-xs-12">
+						<h3>Recent Items</h3>
+							<ul id="recent" class="well">
+						
+
+								<li><figure class="issueupdate">
+											<img src="img/resources.png">
+												<figcaption>
+												<span>Need Software</span>
+												<p class="timestamp">
+												07/01/2015
+												</p>
+												</figcaption>
+										</figure>
+								</li>
+
+
+								<li><figure class="mileupdate">
+											<img src="img/milestone.png">
+												<figcaption>
+												<span>Prototyping</span>
+												<p class="timestamp">
+												07/15/2015
+												</p>
+												</figcaption>
+										</figure>
+								</li>
+
+
+								<li><figure class="mileupdate">
+											<img src="img/milestone.png">
+												<figcaption>
+												<span>Prototyping</span>
+												<p class="timestamp">
+												07/15/2015
+												</p>
+												</figcaption>
+										</figure>
+								</li>
+
+							</ul>
+					</div>
+
+			</div>
+		</div>
+
+
+		</div>
+
+	</div>
+
+<!-- jquery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- Custom script -->
+<script src="js/script.js"></script>
+<!-- Bootstrap minified JavaScript from CDN
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+-->
+<!-- Bootstrap minified javascript (local) -->
+<script src="js/bootstrap.min.js"></script>
+
+
+</body>
+
+
+
+
+</html>

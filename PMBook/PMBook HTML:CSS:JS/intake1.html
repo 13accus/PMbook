@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html lang="eng">
+
+<head>
+	<title>Request Form</title>
+
+<!-- Minified CSS from Bootstrap CDN
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+
+<!-- Optional theme from Bootstrap CDN
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">  -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css" />
+
+<!-- Custom css -->
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<!-- fonts -->
+<link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+</head> 
+
+
+<body class="intake">
+	<div class="container-fixed">
+	
+		<header class="row navbar-fixed-top">
+			<nav>
+				<ul>
+					<li><h3><a href="index.html"> <span> PMbook </span></a></h3></li>
+				</ul>
+			</nav>
+		</header>
+
+
+		<div class="row" style="margin-top: 99px;">
+
+			<div id="formcol" class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+				
+				<h1>Project Request Form</h1>
+				<hr>
+				<h3>I. Request Information</h3>
+				<br>
+				<br>
+				<form>
+				     <div class="form-group">
+				      <label class="control-label " for="name">
+				       Project Name
+				      </label>
+				      <input class="input-sm form-control" id="name" name="name" placeholder="" type="text"/>
+				     </div>
+				     <div class="form-group">
+				      <label class="control-label requiredField" for="email">
+				       Requestor Email Address
+				       <span class="asteriskField">
+				        *
+				       </span>
+				      </label>
+				      <input class="input-sm form-control" id="email" name="email" placeholder="" type="text"/>
+				     </div>
+				     <div class="form-group">
+				      <label class="control-label " for="select">
+				       Project Division
+				      </label>
+				      <select class="input-sm select form-control" id="division" name="division" placeholder="">
+				       <option value="Supervision, Fair Lending, and Enforcement">
+				        Supervision, Fair Lending, and Enforcement
+				       </option>
+				       <option value="Research, Markets, and Regulations">
+				        Research, Markets, and Regulations
+				       </option>
+				       <option value="Operations">
+				        Operations
+				       </option>
+				       <option value="Ombudsman">
+				        Ombudsman
+				       </option>
+				       <option value="Office of the Director">
+				        Office of the Director
+				       </option>
+				       <option value="Legal Division">
+				        Legal Division
+				       </option>
+				       <option value="External Affairs">
+				        External Affairs
+				       </option>
+				       <option value="Consumer Education and Engagement">
+				        Consumer Education and Engagement
+				       </option>
+				      </select>
+				     </div>
+
+				     <div class="form-group">
+				      <label class="control-label " for="select">
+				       Project Office
+				      </label>
+				      <select class="input-sm select form-control" id="division" name="division" placeholder="">
+				       <option value="Enterprise">
+				        Enterprise
+				       </option>
+				       <option value="Enforcement">
+				        Enforcement
+				       </option>
+				       <option value="Supervision">
+				        Supervision
+				       </option>
+				       <option value="CR">
+				        CR
+				       </option>
+				       <option value="Communications">
+				        Communications
+				       </option>
+				       <option value="Servicemembers">
+				        Servicemembers
+				       </option>
+				       <option value="CHCO">
+				        CHCO
+				       </option>
+				       <option value="CAO">
+				        CAO
+				       </option>
+				       <option value="Data">
+				        Data
+				       </option>
+				       <option value="T&I Infrastructure">
+				        T&amp;I Infrastructure
+				       </option>
+				       <option value="RMR">
+				        RMR
+				       </option>
+				       <option value="Fair Lending">
+				        Fair Lending
+				       </option>
+				       <option value="Markets">
+				        Markets
+				       </option>
+				       <option value="CFO">
+				        CFO
+				       </option>
+				       <option value="CE">
+				        CE
+				       </option>
+				       <option value="Facilities">
+				        Facilities
+				       </option>
+				       <option value="PMO">
+				        PMO
+				       </option>
+				       <option value="Front Office">
+				        Front Office
+				       </option>
+				      </select>
+				     </div>				    
+				      <div class="form-group">
+				      <label class="control-label " for="sponsor">
+				       Business Sponsor
+				      </label>
+				      <input class="input-sm form-control" id="sponsor" name="sponsor" placeholder="" type="text"/>
+				      <span class="help-block" id="hint_sponsor">
+				       Business sponsors usually have less direct influence on the project.
+				      </span>
+				     </div>
+				     <div class="form-group">
+				      <label class="control-label " for="poc">
+				       Business POC/ Product Owner
+				      </label>
+				      <input class="input-sm form-control" id="poc" name="poc" placeholder="" type="text"/>
+				      <span class="help-block" id="hint_poc">
+				       The business point of contact is usually the product owner. This individual has direct influence on the outcome of the project.
+				      </span>
+				     </div>
+				     <div class="form-group">
+				      <label class="control-label " for="description">
+				       Description
+				      </label>
+				      <textarea class="input-sm textarea form-control" cols="40" id="description" name="description" placeholder="" rows="10"></textarea>
+				     </div>
+				     <div class="form-group">
+				      <label class="control-label " for="method">
+				       Methodology
+				      </label>
+				      <select class="input-sm select form-control" id="method" name="method" placeholder="">
+				       <option value="Agile">
+				        Agile
+				       </option>
+				       <option value="Waterfall">
+				        Waterfall
+				       </option>
+				       <option>
+				       	Other
+				       </option>
+				      </select>
+				     </div>
+				     <div class="form-group">
+				      <label class="control-label " for="date">
+				       Planned Start Date
+				      </label>
+				      <input class="input-sm form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
+				     </div>
+				     <div class="form-group">
+				      <label class="control-label " for="launchdate">
+				       Target Launch Date
+				      </label>
+				      <input class="input-sm form-control" id="launchdate" name="launchdate" placeholder="MM/DD/YYYY" type="text"/>
+				     </div>
+				     <div class="form-group">
+				      <label class="control-label " for="staff">
+				       Anticipated Staff
+				      </label>
+				      <textarea class="input-sm textarea form-control" cols="40" id="staff" name="staff" placeholder="e.g. Project Manager: John Doe; Technical Lead: Ada Lovelace" rows="10"></textarea>
+				      <span class="help-block" id="hint_staff">
+				       Team member roles and known member names if available.
+				      </span>
+				     </div>
+
+				     <div class="form-group">
+				      <div>
+				       <input name="_honey" style="display:none" type="text"/>
+				       <a class="btn btn-default" href="intake2.html" role="button">Next &#187;</a>
+				      </div>
+				     </div>
+				    </form>
+
+
+			</div>
+
+
+		</div> <!--row-->
+
+		<footer class="row">
+
+
+		</footer>
+
+
+
+
+</div> <!--container-->
+
+<!-- jquery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- Custom script -->
+<script src="js/script.js"></script>
+<!-- Bootstrap minified JavaScript from CDN
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>	-->
+<!-- Bootstrap minified javascript (local) -->
+<script src="js/bootstrap.min.js"></script>
+		
+
+</body>
+
+
+
+
+</html>

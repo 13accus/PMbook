@@ -1,0 +1,171 @@
+<html lang="eng">
+
+<head>
+	<title>Master Project List</title>
+
+<!-- Minified CSS from Bootstrap CDN
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+
+<!-- Optional theme from Bootstrap CDN
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">  -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css" />
+
+<!-- Custom css -->
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<!-- fonts -->
+<link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+</head> 
+
+
+<body class="projtable">
+	<div class="container-fluid">
+	
+		<header class="row navbar-fixed-top">
+			<nav>
+				<ul>
+					<li><h3><a href="index.html"> <span> PMbook </span></a></h3></li>
+					<li>
+						<h3><label for="id-of-input" class="sr-only">Search</label></h3>
+							<input type="text" name="search" placeholder="SEARCH" id="search">
+					</li>
+					<li role="presentation" class="dropdown">
+				    	<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+				      <h3>Reports</h3> <span class="caret"></span>
+				    </a>
+				    	<ul class="dropdown-menu">
+				    		<li><a href="#">R&amp;I Deck </a></li> 
+							<li><a href="#">Dashboards</a></li>  
+
+						</ul>
+					</li>
+
+				</ul>
+
+			</nav>
+		</header>
+
+		<div class="row" style= "margin-top: 89px;">
+			<h1>Master Project List </h1>
+
+			<div class="editmenu">
+				<a class="btn btn-default" type="button" href="#">
+                        New
+                </a>
+                <a class="btn btn-default" type="button" href="#">
+                        Edit
+                </a>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="tablewrap">
+				<table id="mpl" class="table table-hover">
+
+						<thead>
+						  <tr>
+						   <th>ID
+						   <th>Project Name
+						   <th>Program
+						   <th>Initiative
+	     				   <th>Divison
+						   <th>Office
+						   <th>Description/Benefits
+						   <th>Execution Status
+						   <th>Methodology
+						   <th>Project Manager
+						   <th>Staff
+						   <th>Start Date
+						   <th>Gate 0
+						   <th>Gate 1
+						   <th>Gate 2
+						   <th>Target Finish Date
+						   <th>Project Closeout Date
+						   <th>Most Recent IPR Date
+						   <th>Most Recent Rebaseline Date
+						   <th>Comments
+						   <th>Business Sponsor/ Product Owner
+						   <th>Primary Capability
+						   <th>Secondary Capability
+						   <th>Tertiary Capability
+						   <th>Degree of Technical Change
+
+						 <tbody>
+						 	<tr>
+						 		<td>001
+						 		<td>Project Hydra
+						 		<td>Digital
+						 		<td>T&amp;I
+						 		<td>Operations
+						 		<td>Developing a project management tool that allows PMs to communicate needs to PMO. This tool also creates sample text that gives one a general idea of the page layout.
+						 		<td>Active
+						 		<td>06/15/15
+						 		<td>08/21/15
+						 		<td>Agile
+						 		<td>Joanna Phillip
+						 		<td>Back-end: Christoper Baccus; Front-end: Briana Slater
+						 		<td>Update to existing functionality/tech.
+						 	<tr>
+						 		<td>002
+						 		<td>Project 2
+						 		<td>Digital
+						 		<td>T&amp;I
+						 		<td>Operations
+						 		<td>Developing a project management tool that allows PMs to communicate needs to PMO. This tool also creates sample text that gives one a general idea of the page layout.
+						 		<td>Active
+						 		<td>06/15/15
+						 		<td>08/21/15
+						 		<td>Agile
+						 		<td>Joanna Phillip
+						 		<td>Back-end: Christoper Baccus; Front-end: Briana Slater
+						 		<td>Update to existing functionality/tech.
+						 	<tr>
+						 		<td>003
+						 		<td>Project 3
+						 		<td>Digital
+						 		<td>T&amp;I
+						 		<td>Operations
+						 		<td>Developing a project management tool that allows PMs to communicate needs to PMO. This tool also creates sample text that gives one a general idea of the page layout.
+						 		<td>Active
+						 		<td>06/15/15
+						 		<td>08/21/15
+						 		<td>Agile
+						 		<td>Joanna Phillip
+						 		<td>Back-end: Christoper Baccus; Front-end: Briana Slater
+						 		<td>Update to existing functionality/tech.
+
+				</table>
+			</div>
+
+		</div> <!--/row-->	
+
+
+</div>
+
+<!-- jquery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- Custom script -->
+<script src="js/script.js"></script>
+<!-- Bootstrap minified JavaScript from CDN
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+-->
+<!-- Bootstrap minified javascript (local) -->
+<script src="js/bootstrap.min.js"></script>
+<!-- jQuery Editable -->
+<script src="js/mindmup-editabletable.js"></script>
+<script>
+$('.table').editableTableWidget({editor: $('<textarea>')}).numericInputExample().find('td:first').focus();
+</script>
+
+</body>
+
+
+
+</html>
+
+
+
+

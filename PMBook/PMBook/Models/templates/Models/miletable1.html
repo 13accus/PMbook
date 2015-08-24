@@ -1,0 +1,212 @@
+
+<!-- CURRENT NOT IN USE -->
+<!-- MILESTONE TABLE
+	
+	This is a table of all the milestones of one project.
+	This page works. However, it would be best to have a click to edit feature.
+-->
+{% load staticfiles %}
+
+<html lang="eng">
+
+<head>
+	<title>{{p.name}} - Milestones</title>
+
+<!-- Minified CSS from Bootstrap CDN                                                                                                                                                                                                        
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+<link rel="stylesheet" type="text/css" href="{% static 'Models/css/bootstrap.css' %}" />
+
+
+<!-- Optional theme from Bootstrap CDN                                                                                                                                                                                                      
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">  -->
+<link rel="stylesheet" type="text/css" href="{% static 'Models/css/bootstrap-theme.css' %}" />
+
+<!-- Custom css -->
+<link rel="stylesheet" type="text/css" href="{% static 'Models/css/style.css' %}" />
+
+<!-- fonts -->
+<link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+
+
+</head> 
+
+
+<body id="projtable">
+
+	<div class="container-fluid">
+
+	<!-- THIS SCRIPT MAY BE USELESS -->
+	<script>
+		$("#search").keypress(function(event) {
+    	if (event.which == 13) {
+       		event.preventDefault();
+        	$("#searchbar").submit();
+    	}
+		});
+	</script>
+
+	<header class="row">
+		<nav>
+			<ul>
+				<li><h3><a href="{% url 'index' %}"> <span> PMbook </span></a></h3></li>
+				<li>
+					<h3><label for="id-of-input" class="sr-only">Search</label></h3>
+					<form id="searchbar" action="{% url 'search' %}" method="post">
+					{% csrf_token %}
+						<input type="text" name="project_id" placeholder="SEARCH" id="search">
+					</form>
+				</li>
+					
+				<li role="presentation" class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+				    	<h3>View Project Details</h3> <span class="caret"></span>
+				    </a>
+				  	
+				  	<ul class="dropdown-menu">
+					  <li><a href="/project/{{p.project_id}}/ri">Risks and Issues </a></li>
+					  <li><a href="/project/{{p.project_id}}/milestone">Milestones </a></li>
+					  <li><a href="/project/{{p.project_id}}/note">Notes</a></li>
+					  <li><a href="/project/{{p.project_id}}/gatedoc">Gate Document</a></li>
+					  <li><a href="/project/{{p.project_id}}">Back to Profile </a></li> 
+					</ul>
+				</li>
+			</ul>
+
+		</nav>
+	</header>
+  
+	<div class="row">
+		<h1>Milestones </h1>
+		<div class="editmenu">
+			<a class="btn btn-default" type="button" href="#">New</a>
+            <a class="btn btn-default" type="button" href="Submit Changes">Submit</a>
+		</div>
+	</div>
+
+	<div class="row">
+		<table id="miletable" class="table table-hover">
+			<thead>
+					<tr>
+					<th>No
+					<th>Title
+					<th>Status
+					<th>Baseline Date
+					<th>Target Date
+					<th>Description
+					<th>Last updated
+				<tbody>
+				{% for milestone in milestone %}
+				<form  action="/project/{{p.project_id}}/milestone/" method="post">
+					{% csrf_token %}
+					<tr>
+					<td>{{ milestone.milestone_id }}
+					<td> <input class="form-control" type="text" name="title" value="{{ milestone.title }}"/>
+					<td> <select id="#submit{{milestone.milestone_id}}" name="status">                                                                                                  
+							<option value='{{milestone.status}}'> {{ milestone.status }} </option>
+							<option value='Pending'>Pending</option>                                                                  
+							<option value='Paused'>Paused</option>                                                                                    
+							<option value='Deleted'>Deleted</option>                                                                                  
+							<option value='Closed'>Closed</option>                                                                                   
+							<option value='Backlogged'>Backlogged</option>                                                                                                      				
+							<option value='Active - Red'>Active - Red</option>                                                                                                  
+							<option value='Active - Yellow'>Active - Yellow</option>                                                                                            
+							<option value='Active - Green'>Active - Green</option>                                                                                                            
+						</select>
+					<td> <input id="datepicker" class="form-control" type="date" name="baseline_date" value="{{ milestone.baseline_date|date:'Y-m-d' }}">
+					<td> <input id="datepicker" class="form-control" type="date" name="target_date" value="{{ milestone.target_date|date:'Y-m-d' }}">
+					<td> <input class="form-control" id="#submit{{milestone.milestone_id}}" type="text" name="comment" value="{{ milestone.comment }}">
+					<td>{{ milestone.timestamp }}
+						
+						<input type="hidden" name="project_id" value="{{p.project_id}}"/>
+						<input type="hidden" name="milestone_id" value="{{milestone.milestone_id}}"/>
+					<td> <input class="btn btn-default" type="submit"/>
+ 				</form>
+						{% endfor %}
+
+
+				<form  action="/project/{{p.project_id}}/milestone/" method="post">
+                	{% csrf_token %}
+					<tr>
+                    <td>{{ milestone.milestone_id }}
+                    <td> <input class="form-control" type="text" name="title" value="{{ milestone.title }}"/>
+                    <td> <select id="#submit{{milestone.milestone_id}}" name="status">                                                                       
+							<option value='{{milestone.status}}'> {{ milestone.status }} </option>
+                            <option value='Pending'>Pending</option>
+                            <option value='Paused'>Paused</option>
+                            <option value='Deleted'>Deleted</option>
+                            <option value='Closed'>Closed</option>                                                                                                         
+                            <option value='Backlogged'>Backlogged</option>                                                                          
+                            <option value='Active - Red'>Active - Red</option>                                                 
+                            <option value='Active - Yellow'>Active - Yellow</option>                                                                                     
+							<option value='Active - Green'>Active - Green</option>                                                                                       
+						</select>
+
+                    <td> <input id="datepicker" class="form-control" type="date" name="baseline_date" value="{{ milestone.baseline_date|date:'Y-m-d' }}">
+                    <td> <input id="datepicker" class="form-control" type="date" name="target_date" value="{{ milestone.target_date|date:'Y-m-d' }}">
+                    <td> <input class="form-control" id="#submit{{milestone.milestone_id}}" type="text" name="comment" value="{{ milestone.comment }}">
+                    <td>{{ milestone.timestamp }}
+                        
+                        <input type="hidden" name="project_id" value="{{p.project_id}}"/>
+                        <input type="hidden" name="milestone_id" value="{{num}}"/>
+                    <td> <input class="btn btn-default" type="submit"/>
+                </form>
+			</table>
+
+		</div> <!--/row-->	
+
+
+		<footer class="row">
+				
+
+		</footer>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- jquery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- Custom script -->
+<script src="{% static 'Models/js/script.js' %}"></script>
+<!-- Bootstrap minified JavaScript from CDN                                                                                                                                                                                                 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>                                                                                                                                                 
+-->
+<!-- Bootstrap minified javascript (local) -->
+<script src="{% static 'Models/js/bootstrap.min.js' %}"></script>
+
+<!-- jQuery Editable -->
+<script type="text/javascript" src="{% static 'Models/js/calender.js' %}"></script>
+
+
+</body>
+
+
+
+</html>
+
+
+
+

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="eng">
+
+<head>
+  <title>PMB-51</title>
+
+<!-- Minified CSS from Bootstrap CDN
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+
+<!-- Optional theme from Bootstrap CDN
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">  -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css" />
+
+<!-- Custom css -->
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<!-- fonts -->
+<link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+</head> 
+
+<!--Load the AJAX API-->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<!-- Chart script -->
+<script src="js/barchart.js"></script>
+
+
+<body class="projtable">
+  <div class="container-fluid">
+  
+    <header class="row">
+      <nav>
+              <ul>
+                <li><h3><a href="index.html"> <span> PMbook </span></a></h3></li>
+                <li>
+                  <h3><label for="id-of-input" class="sr-only">Search</label></h3>
+                    <input type="text" name="search" placeholder="SEARCH" id="search">
+                </li>
+                <li role="presentation" class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <h3>Reports</h3> <span class="caret"></span>
+                  </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">R&amp;I Deck </a></li> 
+                    <li><a href="#">Dashboards</a></li>  
+
+                  </ul>
+                </li>
+
+              </ul>
+
+            </nav>
+    </header>
+
+
+    <div class="row">
+			<h1>T&amp;I Progress Report</h1>
+			<p>
+				Displaying risks and issues from all projects reported within the last 7 days.
+			</p>
+			<br>
+		</div>
+
+
+    <div class="row">
+    	<div class="tablewrap">
+    		<table id="progress" class="table table-hover pre-scrollable">
+
+					<thead>
+					  <tr>
+					   <th>Capability Area
+					   <th>ID <!--no edit-->
+					   <th>Project Name
+					   <th>Project Manager
+					   <th>Business Owner
+					   <th>Target Date
+					   <th>Status 1
+					   <th>Status 2
+					   <th>Status 3
+					   <th>Target Close Date
+					   <th>Key Dependencies
+					 <tbody>
+					 	<tr>
+					 		<td>001
+					 		<td>Project Hydra
+					 		<td class="edit">Issue
+					 		<td class="edit">Need Software
+					 		<td class="edit">Procurement
+					 		<td class="edit">Medium
+					 		<td class="edit"> --
+					 		<td>07/01/15
+					 		<td class="edit">07/08/15
+					 		<td class="edit">Production is halted until appropriate software can be acquired.
+					 		<td class="edit">Joanna Phillip
+					 	<tr>
+					 		<td>002
+					 		<td>Project 2
+					 		<td class="edit">Issue
+					 		<td class="edit">Need Software
+					 		<td class="edit">Procurement
+					 		<td class="edit">Medium
+					 		<td class="edit"> --
+					 		<td>07/01/15
+					 		<td class="edit">07/08/15
+					 		<td class="edit">Production is halted until appropriate software can be acquired.
+					 		<td class="edit">Joanna Phillip
+
+			</table>
+
+
+
+    	</div>
+     
+
+
+    </div> <!--row-->
+
+
+</div> <!--container-->
+
+<!-- jquery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- Custom script -->
+<script src="js/script.js"></script>
+<!-- Bootstrap minified JavaScript from CDN
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+<!-- Bootstrap minified javascript (local) -->
+<script src="js/bootstrap.min.js"></script>
+    
+
+</body>
+
+
+
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="eng">
+
+<head>
+  <title>Report Tables</title>
+
+<!-- Minified CSS from Bootstrap CDN
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+
+<!-- Optional theme from Bootstrap CDN
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">  -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css" />
+
+<!-- Custom css -->
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<!-- Scrollbar css -->
+<line rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css">
+<!-- Scrollbar js -->
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+
+<!-- fonts -->
+<link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+
+<!-- For Google Charts -->
+<!--Load the AJAX API-->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<!-- Chart script -->
+<script src="js/barchart.js"></script>
+</head> 
+
+
+
+
+<body class="projtable">
+  <div class="container-fluid">
+  
+    <header class="row">
+      <nav>
+              <ul>
+                <li><h3><a href="index.html"> <span> PMbook </span></a></h3></li>
+                <li>
+                  <h3><label for="id-of-input" class="sr-only">Search</label></h3>
+                    <input type="text" name="search" placeholder="SEARCH" id="search">
+                </li>
+                <li role="presentation" class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <h3>Reports</h3> <span class="caret"></span>
+                  </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">R&amp;I Deck </a></li> 
+                    <li><a href="#">Dashboards</a></li>  
+
+                  </ul>
+                </li>
+
+              </ul>
+
+            </nav>
+    </header>
+
+
+    <div class="row">
+			<h1>All Risks and Issues </h1>
+			<p>
+				Displaying risks and issues from all projects reported within the last 7 days.
+			</p>
+			<br>
+		</div>
+
+
+    <div class="row">
+    	<div class="tablewrap mCustomScrollbar">
+    		<table id="allritable" class="table table-hover pre-scrollable">
+
+					<thead>
+					  <tr>
+					   <th>ID <!--no edit-->
+					   <th>Project Name
+					   <th>Type <!-- dropdown -->
+					   <th>Title
+					   <th>Category <!-- dropdown -->
+					   <th>Severity
+					   <th>Probability <!--Risk only -->
+					   <th>Open Date <!--no edit-->
+					   <th>Target Close Date
+					   <th>Description
+					   <th>Assigned To
+					   <th>Mitigation Plan
+					   <th>External Dependencies
+					   <th>Close Date
+					   <th>Last updated <!--no edit-->
+					 <tbody>
+					 	<tr>
+					 		<td>001
+					 		<td>Project Hydra
+					 		<td>Issue
+					 		<td>Need Software
+					 		<td>Procurement
+					 		<td>Medium
+					 		<td> --
+					 		<td>07/01/15
+					 		<td>07/08/15
+					 		<td>Production is halted until appropriate software can be acquired.
+					 		<td>Joanna Phillip
+					 		<td>Fill out a ton of forms and wait forever.
+					 		<td>Procurement/security
+					 		<td>07/16/15
+					 		<td>07/16/15
+					 	<tr>
+					 		<td>002
+					 		<td>Project 2
+					 		<td>Issue
+					 		<td>Need Software
+					 		<td>Procurement
+					 		<td>Medium
+					 		<td> --
+					 		<td>07/01/15
+					 		<td>07/08/15
+					 		<td>Production is halted until appropriate software can be acquired.
+					 		<td>Joanna Phillip
+					 		<td>Fill out a ton of forms and wait forever.
+					 		<td>Procurement/security
+					 		<td>07/16/15
+					 		<td>07/16/15
+	
+
+			</table>
+
+
+    	</div>
+
+
+    </div> <!--row-->
+
+
+
+</div> <!--container-->
+
+<!-- jquery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- Custom script -->
+<script src="js/script.js"></script>
+<!-- Bootstrap minified JavaScript from CDN
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+<!-- Bootstrap minified javascript (local) -->
+<script src="js/bootstrap.min.js"></script>
+
+
+
+<script type="text/javascript">
+    (function($){
+        $(window).load(function(){
+            $(".tablewrap").mCustomScrollbar();
+        });
+    })(jQuery);
+</script>
+
+
+</body>
+
+
+
+
+</html>

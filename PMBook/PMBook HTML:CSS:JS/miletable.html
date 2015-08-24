@@ -1,0 +1,146 @@
+<html lang="eng">
+
+<head>
+	<title>Milestones</title>
+
+<!-- Minified CSS from Bootstrap CDN
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+
+<!-- Optional theme from Bootstrap CDN
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">  -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css" />
+
+<!-- X-editable -->
+<link href="bootstrap-editable/css/bootstrap-editable.css" rel="stylesheet">
+<!-- Custom css -->
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<!-- fonts -->
+<link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+</head> 
+
+
+<body class="projtable">
+	<div class="container-fluid">
+	
+		<header class="row navbar-fixed-top">
+			<nav>
+				<ul>
+					<li><h3><a href="index.html"> <span> PMbook </span></a></h3></li>
+					<li>
+						<h3><label for="id-of-input" class="sr-only">Search</label></h3>
+							<input type="text" name="search" placeholder="SEARCH" id="search">
+					</li>
+					<li role="presentation" class="dropdown">
+				    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+				      <h3>View Project Details</h3> <span class="caret"></span>
+				    </a>
+				    	<ul class="dropdown-menu">
+				    		<li><a href="ritable.html">Risks and Issues </a></li> 
+							<li><a href="miletable.html">Milestones </a></li> 
+							<li><a href="notetable.html">Notes</a></li> 
+							<!-- <li><a href="gatedoc">Gate Document</a></li> -->
+							<li role="separator" class="divider"></li>
+							<li><a href="profile.html">Back to Profile </a></li> 
+
+						</ul>
+					</li>
+
+				</ul>
+
+			</nav>
+		</header>
+
+
+		<div class="row" style="margin-top: 99px;">
+			<h1>Milestones </h1>
+
+		</div>
+
+
+		<div class="row">
+			<div class="tablewrap">
+				<table id="miletable" class="table table-hover">
+
+						<thead>
+						  <tr>
+						   <th>No
+						   <th>Title
+						   <th>Status
+						   <th>Baseline Date
+						   <th>Target Date
+						   <th>Description
+						   <th>Finish Date
+						   <th>Last updated
+						 <tbody>
+						 	<tr>
+						 		<td>001
+						 		<td class="edit">Prototyping
+						 		<td class="edit">Complete
+						 		<td class="edit">06/10/15
+						 		<td class="edit">07/15/15
+						 		<td class="edit">Prototype mock-up screens with PMO personnel and friends.
+						 		<td>07/16/15
+						 		<td>07/16/15
+						 	<tr>
+						 		<td>002
+						 		<td class="edit">Prototyping
+						 		<td class="edit">Complete
+						 		<td class="edit">06/10/15
+						 		<td class="edit">07/15/15
+						 		<td class="edit">Prototype mock-up screens with PMO personnel and friends.
+						 		<td>07/16/15
+						 		<td>07/16/15
+						 	<tr>
+						 		<td>003
+						 		<td class="edit">Prototyping
+						 		<td class="edit">Complete
+						 		<td class="edit">06/10/15
+						 		<td class="edit">07/15/15
+						 		<td class="edit">Prototype mock-up screens with PMO personnel and friends.
+						 		<td>07/16/15
+						 		<td>07/16/15
+						 	<tr>
+						 		<td>004
+						 		<td class="edit">Prototyping
+						 		<td class="edit">Complete
+						 		<td class="edit">06/10/15
+						 		<td class="edit">07/15/15
+						 		<td class="edit">Prototype mock-up screens with PMO personnel and friends.
+						 		<td>07/16/15
+						 		<td>07/16/15
+
+						 
+				</table>
+			</div>
+
+		</div> <!--/row-->	
+
+
+
+<!-- jquery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- Custom script -->
+<script src="js/script.js"></script>
+<!-- Bootstrap minified JavaScript from CDN
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+-->
+<!-- Bootstrap minified javascript (local) -->
+<script src="js/bootstrap.min.js"></script>
+<!-- jQuery Editable -->
+<script src="js/mindmup-editabletable.js"></script>
+<script>
+$('.table').editableTableWidget({editor: $('<textarea>')}).numericInputExample().find('td:first').focus();
+</script>
+
+</body>
+
+
+
+</html>
+
+
+
+
